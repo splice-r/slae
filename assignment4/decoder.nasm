@@ -11,7 +11,7 @@ decoder:
     mov cl, length/4					; iterate for every dword - in our case it will be 7 times
 
 decode:
-    mov eax, dword [esi]        		; move into eax the dword pointed by esi
+    mov eax, dword [esi]        		    ; move into eax the dword pointed by esi
     bswap eax						; use bswap for little endian format
     push eax						; place it on stack
     add esi,4 						; move to next dword
